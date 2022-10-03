@@ -11,4 +11,11 @@ class Application < Sinatra::Base
 
     return "Hello #{name}"
   end
+
+  post '/submit' do
+    name = params[:name]
+    message = params[:message]
+
+    return "Thanks #{name}, you returned this message: #{message}"
+  end
 end
