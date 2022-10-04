@@ -8,11 +8,11 @@ describe Application do
   let(:app) { Application.new }
 
   context 'testing GET /hello' do
-    it 'returns 200 OK and correct content' do
-      response = get('/hello', name: 'Piper')
+    it 'returns 200 OK and contains an h1 title' do
+      response = get('/hello')
 
       expect(response.status).to eq(200)
-      expect(response.body).to eq('Hello Piper')
+      expect(response.body).to include('<h1>Hello!</h1>')
     end
   end
 
